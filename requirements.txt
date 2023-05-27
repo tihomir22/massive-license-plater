@@ -1,0 +1,10 @@
+azure-storage-blob
+pyarrow
+ultralytics
+pyyaml
+opencv-python-headless
+numpy
+pandas
+imutils
+Pillow
+psutil
