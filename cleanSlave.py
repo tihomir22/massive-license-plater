@@ -8,6 +8,8 @@ from io import BytesIO
 import base64
 import numpy as np
 import argparse
+import logging
+logging.disable(logging.CRITICAL)
 
 #print("\n INIT CHILD \n")
 # Configurar el nivel de registro a un nivel alto que descarte todos los registros

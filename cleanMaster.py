@@ -41,9 +41,6 @@ blobs = container_client.list_blobs()
 cont = 0
 for blob in blobs:
 
-    if not blob.name.endswith('.parquet'):
-        continue
-
     while True:
         if resourcesExceeded():
             time.sleep(WAIT_TIME)
@@ -51,6 +48,7 @@ for blob in blobs:
         else:
             subprocess.Popen(
                 [python, "cleanSlave.py", "--blob_name", str(blob.name)])
+            time.sleep(1)
             break
         
     print("\n \n")
@@ -59,5 +57,5 @@ for blob in blobs:
     print("\n \n")
     
     cont = cont + 1
-    if cont == 5:
-        break
+    # if cont == 5:
+    #    break
